@@ -17,8 +17,8 @@ public class ApiClientFactory : IApiClientFactory
     {
       return provider.ToLower() switch
         {
-            "github" => _serviceProvider.GetRequiredService<GitHubClient>(),
-            "gitlab" => _serviceProvider.GetRequiredService<GitLabClient>(),
+            ApiProviders.GitHub => _serviceProvider.GetRequiredService<GitHubClient>(),
+            ApiProviders.GitLab => _serviceProvider.GetRequiredService<GitLabClient>(),
             _ => throw new KeyNotFoundException($"Unknown provider: {provider}")
         };
     }

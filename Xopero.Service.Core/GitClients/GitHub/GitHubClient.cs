@@ -9,10 +9,7 @@ namespace Xopero.Service.Core.GitClients.GitHub;
 
 public class GitHubClient : ApiHttpClientBase, IIssueService
 {
-    public string ProviderKey => ApiProviders.GitHub;
     private readonly ILogger<GitHubClient> _logger;
-
-
     public GitHubClient(HttpClient http, ILogger<GitHubClient>  logger) : base(http)
     {
         _logger = logger;

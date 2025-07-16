@@ -1,6 +1,3 @@
-
-using System.ComponentModel.DataAnnotations;
-
 namespace Xopero.Service.Core.Models.Requests;
 
 public class CreateIssueRequest

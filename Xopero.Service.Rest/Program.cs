@@ -48,8 +48,8 @@ builder.Services.AddSingleton<Func<string, IGitApiValidators>>(sp => provider =>
 {
     return provider.ToLower() switch
     {
-        "github" => sp.GetRequiredService<GitHubValidators>(),
-        "gitlab" => sp.GetRequiredService<GitLabValidator>(),
+        ApiProviders.GitHub => sp.GetRequiredService<GitHubValidators>(),
+        ApiProviders.GitLab => sp.GetRequiredService<GitLabValidator>(),
         _ => throw new InvalidOperationException($"Validator for provider '{provider}' not found.")
     };
 });

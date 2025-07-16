@@ -9,10 +9,7 @@ namespace Xopero.Service.Core.GitClients.GitLab;
 
 public class GitLabClient : ApiHttpClientBase, IIssueService
 {
-    public string ProviderKey => ApiProviders.GitLab;
     private readonly ILogger<GitLabClient> _logger;
-
-
     public GitLabClient(HttpClient http,  ILogger<GitLabClient>  logger) : base(http)
     {
         _logger = logger;
